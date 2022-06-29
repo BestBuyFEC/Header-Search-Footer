@@ -3,8 +3,10 @@ import Search from "./Search";
 import Menu from "./Menu";
 import StoreLocator from "./StoreLocator";
 import Cart from "./Cart";
+import BottomNav from "./BottomNav";
 
-function Header() {
+function Header(searchData) {
+  console.log(searchData)
   return (
     <div className="App">
       <header>
@@ -19,7 +21,7 @@ function Header() {
               <svg
                 aria-label="BestBuy.com"
                 role="img"
-                class="block"
+                className="block"
                 height="40"
                 width="68"
                 xmlns="http://www.w3.org/2000/svg"
@@ -44,18 +46,12 @@ function Header() {
               </svg>
             </a>
             <Menu />
-            <Search />
+            <Search searchData={searchData}/>
             <StoreLocator />
             <Cart />
+            
           </div>
-          <div>
-            <nav>
-              <div>
-                <ul></ul>
-                <div></div>
-              </div>
-            </nav>
-          </div>
+          <BottomNav />
         </div>
       </header>
     </div>

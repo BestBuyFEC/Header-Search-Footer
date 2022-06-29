@@ -10,10 +10,10 @@ app.use(cors())
 app.use(express.json())
 app.use(express.static("public"));
 
-app.get("/api/tasks", async (_, res) => {
+app.get("/api/products", async (_, res) => {
     try {
-        await db.query('SELECT * FROM tasks ORDER BY id DESC', (error, results) => {
-            // console.log(results)
+        await db.query('SELECT * FROM products', (error, results) => {
+            console.log(results) 
             res.status(200).json(results.rows)
         })
     } catch (error) {
@@ -21,10 +21,10 @@ app.get("/api/tasks", async (_, res) => {
     }
   });
 
-  app.get("/api/tasks/:id", async (req, res) => {
-    const id = req.params.id
+  app.get("/api/all", async (_, res) => {
+    // const id = req.params.id
     try {
-        await db.query('SELECT * FROM tasks WHERE id = $1',  [id], (error, results) => {
+        await db.query('SELECT * FROM images INNER JOIN products ON images.product_id = products.id', (error, results) => {
             
             res.status(200).json(results.rows)
         })
@@ -33,48 +33,22 @@ app.get("/api/tasks", async (_, res) => {
     }
   });
 
-app.post("/api/create", async (req, res) => {
-   try {
-    const {task_content, due_date, completed} = req.body
-    console.log(req)
-    await db.query('INSERT INTO tasks (task_content, due_date, completed) VALUES ($1, $2, $3)', [task_content, due_date, completed], (error, results) => {
-        console.log(req.body)
-        res.status(200).send(`${req.body} task was added`)
-    })
+  app.get("/api/products/:id", async (req, res) => {
+    const id = req.params.id
+    try {
+        await db.query('SELECT * FROM images INNER JOIN products ON images.product_id = products.id WHERE product_id = $1',  [id], (error, results) => {
+            
+            res.status(200).json(results.rows)
+        })
     } catch (error) {
-       console.error(error.message)
+        console.error(error.message)
     }
-});
+  });
 
-app.put("/api/update/:id", async (req, res) => {
-    try {
-        const id = req.params.id
-        const {task_content, due_date, completed} = req.body
-        
-      await db.query(
-            'UPDATE tasks SET task_content = $1, due_date = $2, completed = $3 WHERE id = $4', [task_content, due_date, completed, id], (err, results) => {
-         console.log(req.body)
-         res.status(200).send(`task was added`)
-     })
-     } catch (error) {
-        console.error(error.message)
-     }
- });
 
- app.delete("/api/delete/:id", async (req, res) => {
-    try {
-        const id = req.params.id
-        await db.query(
-            'DELETE FROM tasks WHERE id = $1', [id], (err, results) => {
-             res.status(200).send(`task was deleted`)
-     })
-     } catch (error) {
-        console.error(error.message)
-     }
- });
 
-app.listen(process.env.PORT, () => {
-    console.log(`Server is listening on port: ${process.env.PORT}`)
+app.listen(process.env.API_PORT, () => {
+    console.log(`Server is listening on port: ${process.env.API_PORT}`)
 })
 
 

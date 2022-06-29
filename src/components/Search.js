@@ -1,34 +1,52 @@
-import React from 'react'
+import { useState } from "react"
+import List from "./List"
 
-function Search() {
+function Search(searchData, getSearch) {
+  console.log(searchData)
+    const [searchString, setSearchString] = useState("")
+    const handleGetSearch = (e) => {
+      
+        let lowerCase = e.target.value.toLowerCase()
+        setSearchString(lowerCase)
+        getSearch()
+        return (
+          <div>  
+          Hello World
+          </div>
+        )
+    }
+
+      
+      
+
   return (
-    <div className="search-bar">
+    <div className="search-bar" >
               <div className="appContainer">
-                <form className="sb-input-field">
+                <form className="sb-input-field" onSubmit={handleGetSearch}>
                   <input
                     type="text"
                     id="gh-search-input"
-                    class="search-input"
+                    className="search-input"
                     name="st"
-                    maxlength="90"
+                    maxLength="90"
                     placeholder="What can we help you find today?"
-                    autocomplete="off"
+                    autoComplete="off"
                     aria-label="Type to search. Navigate forward to hear suggestions"
-                    value=""
-                    autocorrect="off"
+                    value={searchString}
+                    autoCorrect="off"
                     autocapitolize="off"
-                    spellcheck="false"
+                    spellCheck="false"
                     aria-controls="suggestViewClientComponent"
+                    onChange={handleGetSearch}
+                    
                   />
-                  <div id="suggestViewClientComponent">
-                    <div></div>
-                  </div>
+                 
                   <button
                     id="header-clear-search-icon"
                     className="clear-search-icon hidden"
                     aria-label="Clear search text"
                   >
-                    <span class="header-close-icon" aria-hidden="true">
+                    <span className="header-close-icon" aria-hidden="true">
                       <svg
                         aria-hidden="true"
                         role="img"
@@ -51,8 +69,9 @@ function Search() {
                     className="header-search-button"
                     title="submit search"
                     aria-label="submit search"
+                    onClick={handleGetSearch}
                   >
-                    <span class="header-search-icon" aria-hidden="true">
+                    <span className="header-search-icon" aria-hidden="true">
                       <svg
                         aria-hidden="true"
                         role="img"
@@ -88,7 +107,10 @@ function Search() {
                   <input type="hidden" id="keys" value="keys" name="keys" />
                 </form>
               </div>
+              <List searchData={searchData} />
             </div>
+            
+           
   )
 }
 

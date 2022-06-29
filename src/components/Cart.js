@@ -3,20 +3,20 @@ import React from 'react'
 function Cart() {
   return (
     <div className="cart-icon">
-              <div class="cart-icon">
+              <div className="cart-icon">
                 <div>
                   <div
                     id="shop-cart-icon-26647908"
-                    class="_none"
+                    className="_none"
                     data-version="1.5.20"
                   >
-                    <div class="shop-cart-icon">
-                      <div class="appContainer" data-reactroot="">
-                        <div class="bby-cart lv">
+                    <div className="shop-cart-icon">
+                      <div className="appContainer" data-reactroot="">
+                        <div className="bby-cart lv">
                           <a
                             data-lid="hdr_carticon"
                             href="https://www.bestbuy.com/cart"
-                            class="cart-link flex align-items-center"
+                            className="cart-link flex align-items-center"
                             aria-label="Cart, 0 item"
                             title="Cart"
                           >
@@ -41,11 +41,11 @@ function Cart() {
                 <div>
                   <div
                     id="pricing-price-change-notification-96948905"
-                    class="_none"
+                    className="_none"
                     data-version="1.2225.7"
                   >
-                    <div class="pricing-price-change-notification">
-                      <div class="appContainer"></div>
+                    <div className="pricing-price-change-notification">
+                      <div className="appContainer"></div>
                     </div>
                   </div>
                 </div>
