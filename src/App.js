@@ -16,7 +16,7 @@ function App() {
   // console.log(searchData);
 
   function loadOnce() {
-    setSearchPage(true);
+   
     setLoading(true);
     setLoadingMessage("App is Loading");
     fetch("http://localhost:3012/api/products/1")
@@ -24,28 +24,19 @@ function App() {
       .then((data) => setSearch(data));
     // .then((data) => console.log(data))
     setLoading(false);
-    setSearchPage(false);
+   
     // console.log(searchData);
   }
 
   function getSearch() {
+    setSearchPage(true)
+    console.log()
     setLoading(true);
     setLoadingMessage("App is Loading");
-    fetch("http://localhost:3012/api/all/")
+    fetch("http://localhost:3012/api/products/")
       .then((response) => response.json())
-      .then((data) =>
-        setSearch(
-          data.map((elem) => ({
-            id: elem.product_id,
-            brand: elem.brand,
-            product_name: elem.product_name,
-            image_url: elem.image_url,
-            model: elem.model,
-            sku: elem.sku,
-            price: elem.price,
-          }))
-        )
-      );
+      .then((data) => console.log(data));
+      
     // .then((data) => console.log(data))
     setLoading(false);
 
@@ -57,11 +48,11 @@ function App() {
   // }
 
   return searchPage ? (
-    <SearchPage searchData={searchData} />
+    <SearchPage searchData={searchData} setSearchPage={setSearchPage}/>
   ) : (
     <div>
 
-    <div><Header getSearch={getSearch} searchData={searchData} /></div>
+    <div><Header searchData={searchData} setSearchPage={setSearchPage} setLoading={setLoading} setLoadingMessage={setLoadingMessage}/></div>
     
     <div></div>
 

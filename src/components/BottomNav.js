@@ -95,9 +95,7 @@ function BottomNav() {
               </a>
             </li>
           </ul>
-          <div>
-
-          </div>
+          <div></div>
         </div>
       </nav>
     </div>
