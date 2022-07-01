@@ -28,33 +28,40 @@ function App() {
     // console.log(searchData);
   }
 
-  function getSearch(e) {
-    console.log(e.target)
-    setLoading(true);
-    setLoadingMessage("App is Loading");
-    fetch("http://localhost:3012/api/products/1")
-      .then((response) => response.json())
-      .then((data) => setSearch(data));
+  // function getSearch(e) {
+  //   console.log(e.target)
+  //   setLoading(true);
+  //   setLoadingMessage("App is Loading");
+  //   fetch("http://localhost:3012/api/products/1")
+  //     .then((response) => response.json())
+  //     .then((data) => setSearch(data));
       
-    // .then((data) => console.log(data))
-    setLoading(false);
+  //   // .then((data) => console.log(data))
+  //   setLoading(false);
 
-    return searchData;
+  //   return searchData;
+  // }
+
+  if (loading === true) {
+    return (
+      <div>{loading}</div>
+    )
   }
+
 
   // function lo() {
   //   set
   // }
-
+console.log(loading)
   return searchPage ? (
-    <SearchPage searchData={searchData} setSearchPage={setSearchPage}/>) 
+    <SearchPage searchData={searchData}/>) 
     
     : 
     
     
     (<div>
       <div>
-      <Header getSearch={getSearch} searchData={searchData} setSearchPage={setSearchPage}/></div>
+      <Header searchData={searchData}  /></div>
     
     <div></div>
 

@@ -6,7 +6,7 @@ import Cart from "./Cart";
 import BottomNav from "./BottomNav";
 
 function Header(searchData) {
-  console.log(searchData);
+ 
   return (
     <div className="App">
       <header>

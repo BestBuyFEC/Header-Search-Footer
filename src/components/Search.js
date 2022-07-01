@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import List from "./List";
+
 
 
 function Search(searchData) {
@@ -100,6 +100,7 @@ function Search(searchData) {
           <input type="hidden" id="keys" value="keys" name="keys" />
         </form>
       </div>
+    
     </div>
   );
 }

@@ -1777,3 +1777,59 @@ width: 1022px;
 .search-card-container {
   width: 100%;
 }
+
+.c-stars-container {
+  text-size-adjust: 100%;
+  font-family: var(--family);
+  line-height: 1.2;
+  list-style-type: none;
+  -webkit-box-direction: normal;
+  color: var(--color-unstable-link-blue);
+  font-size: 13px;
+  box-sizing: border-box;
+  background-repeat: inherit;
+  background-size: inherit;
+  display: flex;
+  height: 100%;
+  position: absolute;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27><path d=%27M12,18.1c0.2,0,0.5,0.1,0.7,0.2l5.5,3.4L16.7,15c-0.1-0.2,0-0.5,0.2-0.7L21.6,9h-6c-0.5,0-1-0.3-1.2-0.8L12,2.6L9.6,8.2C9.4,8.7,8.9,9,8.4,9h-6l4.8,5.4c0.2,0.2,0.2,0.4,0.2,0.7l-1.5,6.7l5.5-3.4C11.5,18.1,11.8,18.1,12,18.1z M15.8,7.7L15.8,7.7L15.8,7.7z%27 fill=%27%23FFE000%27/></svg>");
+  width: 100%;
+}
+
+.c-stars-wrapper {
+  text-size-adjust: 100%;
+  font-family: var(--family);
+  line-height: 1.2;
+  list-style-type: none;
+  -webkit-box-direction: normal;
+  color: var(--color-unstable-link-blue);
+  font-size: 13px;
+  box-sizing: border-box;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 xml:space=%27preserve%27><path d=%27M5.5,23.5c-0.2,0-0.5-0.1-0.7-0.2c-0.4-0.3-0.6-0.8-0.5-1.3l1.5-6.9L0.9,9.6C0.6,9.2,0.5,8.7,0.7,8.2s0.6-0.7,1.1-0.7h6.4l2.6-6c0.2-0.5,0.7-0.8,1.2-0.8s1,0.3,1.2,0.8l0,0l2.6,6h6.4c0.5,0,0.9,0.3,1.1,0.7c0.2,0.5,0.1,1-0.2,1.3l-4.9,5.5l1.5,6.9c0.1,0.5-0.1,1-0.5,1.3s-0.9,0.3-1.4,0L12,19.6l-5.8,3.6C6,23.4,5.7,23.5,5.5,23.5z M12,18.1c0.2,0,0.5,0.1,0.7,0.2l5.5,3.4l-1.6-7l5-5.6h-6c-0.5,0-1-0.3-1.2-0.8L12,2.6L9.6,8.2C9.4,8.7,8.9,9,8.4,9h-6l5,5.6l-1.6,7l5.5-3.4C11.5,18.1,11.8,18.1,12,18.1z%27 fill=%27%23C5CBCD%27/></svg>");
+  background-repeat: repeat-x;
+  display: block;
+  flex: 0 0 auto;
+  position: relative;
+  background-size: var(--size-200);
+  height: var(--size-200);
+  width: var(--size-1000);
+}
+
+.visually-hidden {
+  text-size-adjust: 100%;
+  font-family: var(--family);
+  line-height: 1.2;
+  list-style-type: none;
+  -webkit-box-direction: normal;
+  color: var(--color-unstable-link-blue);
+  font-size: 13px;
+  box-sizing: border-box;
+  clip: rect(0,0,0,0);
+  border: 0;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
