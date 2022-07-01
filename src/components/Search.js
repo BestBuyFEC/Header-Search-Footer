@@ -2,25 +2,17 @@ import React, { useState } from "react";
 import List from "./List";
 
 
-function Search(
-  searchData
- 
-) {
-
-
-  console.log(searchData);
+function Search(searchData) {
+   console.log(searchData);
   const [searchString, setSearchString] = useState("");
   const handleGetSearch = (e) => {
     let lowerCase = e.target.value.toLowerCase();
     setSearchString(lowerCase);
-    handleGetSearch()
+  
   
   };
 
-  // const setPage = (setSearchPage, searchPage) => {
-  //   setSearchPage(true)
-  //   console.log(searchPage)
-  // }
+
 
   return (
     <div className="search-bar">
@@ -68,7 +60,7 @@ function Search(
             className="header-search-button"
             title="submit search"
             aria-label="submit search"
-            // onClick={handleGetSearch}
+            // onClick={}
           >
             <span class="header-search-icon" aria-hidden="true">
               <svg
@@ -108,7 +100,6 @@ function Search(
           <input type="hidden" id="keys" value="keys" name="keys" />
         </form>
       </div>
-      <List searchData={searchData} />
     </div>
   );
 }

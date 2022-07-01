@@ -19,6 +19,7 @@ function SearchPage({ searchData }) {
         alt=""
         class="img_ad"
       />
+      <div className="search-pg">
       <div class="col-xs-3 facets-column">
         <div class="sticky-container lv">
           <div>
@@ -500,46 +501,10 @@ function SearchPage({ searchData }) {
             </div>
           </div>
         </div>
-        <div>
-          <div id="shop-display-ad-82716965" class=" " data-version="0.0.75">
-            <div class="shop-display-ad">
-              <div class="wide-skyscraper" data-reactroot="">
-                <div class="app-container outer-container text-bottom">
-                  <div
-                    class="inner-container"
-                    id="gpt-shop-display-ad-82716965"
-                    data-google-query-id="CN7IpOHX1vgCFajxGAIdAZACbQ"
-                  >
-                    <div id="google_ads_iframe_/6011/BestBuyDesktopWeb/search_results/toys_games_x_collectibles/toys/lego_orchid_10311_plant_decor_toy_building_kit_608_pieces_1__container__">
-                      <iframe
-                        id="google_ads_iframe_/6011/BestBuyDesktopWeb/search_results/toys_games_x_collectibles/toys/lego_orchid_10311_plant_decor_toy_building_kit_608_pieces_1"
-                        name="google_ads_iframe_/6011/BestBuyDesktopWeb/search_results/toys_games_x_collectibles/toys/lego_orchid_10311_plant_decor_toy_building_kit_608_pieces_1"
-                        title="3rd party ad content"
-                        width="160"
-                        height="600"
-                        scrolling="no"
-                        marginwidth="0"
-                        marginheight="0"
-                        frameborder="0"
-                        role="region"
-                        aria-label="Advertisement"
-                        tabindex="0"
-                        srcdoc=""
-                        data-google-container-id="2"
-                        data-load-complete="true"
-                        data-integralas-id-7d6d1235-cae8-d381-e5f6-3cf1c32e9f53=""
-                      ></iframe>
-                    </div>
-                  </div>
-                  <span class="horizontal-text ad-text uppercase">
-                    advertisement
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
+       
+        
+      </div>
+              <div className="search-card-container">
         <div class="banner-wrapper top-border">
           <div class="banner-middle-column">
             <span
@@ -628,10 +593,10 @@ function SearchPage({ searchData }) {
             />
           ))}
         </div>
-
+        </div>
         
-      </div>
-      <Footer />
+        </div>
+        <Footer />
     </div>
   );
 }
