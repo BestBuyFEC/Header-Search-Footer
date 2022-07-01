@@ -23,13 +23,13 @@ function SearchPage({ searchData }) {
       <div class="col-xs-3 facets-column">
         <div class="sticky-container lv">
           <div>
-            <div data-shop-search-query-builder-v1="no-content">No content</div>
+            <div data-shop-search-query-builder-v1="no-content"></div>
           </div>
           <div class="component-facets">
             <div class="app-container lv">
               <div id="main-filters" class="facet-list-container">
                 <div role="heading" aria-level="2" class="sr-only">
-                  Categories &amp; Filters
+                  {/* Categories &amp; Filters */}
                 </div>
                 <div class="get-it-fast-together">
                   <div class="get-it-fast facet-section">

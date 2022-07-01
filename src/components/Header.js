@@ -1,14 +1,39 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import { Link } from "react-router-dom";
 import Search from "./Search";
 import Menu from "./Menu";
 import StoreLocator from "./StoreLocator";
 import Cart from "./Cart";
 import BottomNav from "./BottomNav";
+import SearchPage from "./SearchPage";
 
-function Header(searchData) {
+function Header() {
+
+  const [searchData, setSearch] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [loadingMessage, setLoadingMessage] = useState("");
+  const [searchPage, setSearchPage] = useState(false);
+
+  useEffect(() => {
+    loadOnce();
+  }, []);
+
+
+
+  function loadOnce() {
+    setSearchPage(true);
+    setLoading(true);
+    setLoadingMessage("App is Loading");
+    fetch("http://localhost:3012/api/all")
+      .then((response) => response.json())
+      .then((data) => setSearch(data));
+    setLoading(false);
+    setSearchPage(false);
+ 
+  }
  
   return (
-    <div className="App">
+    <div className="Header">
       <header>
         <div className="top-container">
           <div className="top-nav">
@@ -47,7 +72,7 @@ function Header(searchData) {
             </a>
             <Menu />
             <Search
-              searchData={searchData}
+              searchData={searchData} setSearchPage={setSearchPage} searchPage={searchPage}
             />
             <StoreLocator />
             <Cart />

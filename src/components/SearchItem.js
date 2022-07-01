@@ -44,15 +44,15 @@ function SearchItem({
                       <div className="variation-info">
                         <div class="sku-model">
                           <div class="sku-attribute-title">
-                            <span class="attribute-title">Model:</span>{" "}
+                            <span class="attribute-title"><b>Model:</b></span>{" "}
                             <span class="sku-value">{model}</span>
                           </div>
                           <div class="sku-attribute-title">
-                            <span class="attribute-title">SKU:</span>{" "}
+                            <span class="attribute-title"><b>SKU:</b></span>{" "}
                             <span class="sku-value">{sku}</span>
                           </div>
                           <div class="sku-attribute-title">
-                            <span class="attribute-title">Release Date:</span>{" "}
+                            <span class="attribute-title"><b>Release Date:</b></span>{" "}
                             <span class="sku-value">{release_date}</span>
                           </div>
                         </div>

@@ -1,14 +1,17 @@
 import React, { useState } from "react";
+import SearchPage from "./SearchPage";
 
 
 
-function Search(searchData) {
+function Search(searchData, setSearchPage, searchPage) {
    console.log(searchData);
   const [searchString, setSearchString] = useState("");
   const handleGetSearch = (e) => {
-    let lowerCase = e.target.value.toLowerCase();
-    setSearchString(lowerCase);
-  
+    e.preventDefault()
+    // let lowerCase = e.target.value.toLowerCase();
+    // setSearchString(lowerCase);
+  setSearchPage(true)
+  console.log(searchPage)
   
   };
 
