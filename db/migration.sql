@@ -12,7 +12,8 @@ CREATE TABLE products(
    product_name VARCHAR NOT NULL,
    model VARCHAR NOT NULL,
    sku VARCHAR NOT NULL,
-   price DECIMAL(10,2) NOT NULL
+   price DECIMAL(10,2) NOT NULL,
+   release_date TEXT NOT NULL
    
 );
 

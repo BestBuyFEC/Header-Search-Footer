@@ -16,26 +16,25 @@ function App() {
   // console.log(searchData);
 
   function loadOnce() {
-   
+    setSearchPage(true);
+    setLoading(true);
+    setLoadingMessage("App is Loading");
+    fetch("http://localhost:3012/api/all")
+      .then((response) => response.json())
+      .then((data) => setSearch(data));
+    // .then((data) => console.log(data))
+    setLoading(false);
+    setSearchPage(false);
+    // console.log(searchData);
+  }
+
+  function getSearch(e) {
+    console.log(e.target)
     setLoading(true);
     setLoadingMessage("App is Loading");
     fetch("http://localhost:3012/api/products/1")
       .then((response) => response.json())
       .then((data) => setSearch(data));
-    // .then((data) => console.log(data))
-    setLoading(false);
-   
-    // console.log(searchData);
-  }
-
-  function getSearch() {
-    setSearchPage(true)
-    console.log()
-    setLoading(true);
-    setLoadingMessage("App is Loading");
-    fetch("http://localhost:3012/api/products/")
-      .then((response) => response.json())
-      .then((data) => console.log(data));
       
     // .then((data) => console.log(data))
     setLoading(false);
@@ -48,11 +47,14 @@ function App() {
   // }
 
   return searchPage ? (
-    <SearchPage searchData={searchData} setSearchPage={setSearchPage}/>
-  ) : (
-    <div>
-
-    <div><Header searchData={searchData} setSearchPage={setSearchPage} setLoading={setLoading} setLoadingMessage={setLoadingMessage}/></div>
+    <SearchPage searchData={searchData} setSearchPage={setSearchPage}/>) 
+    
+    : 
+    
+    
+    (<div>
+      <div>
+      <Header getSearch={getSearch} searchData={searchData} setSearchPage={setSearchPage}/></div>
     
     <div></div>
 

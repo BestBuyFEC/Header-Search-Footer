@@ -5,7 +5,7 @@ import StoreLocator from "./StoreLocator";
 import Cart from "./Cart";
 import BottomNav from "./BottomNav";
 
-function Header(searchData, setSearchPage, setLoading, setLoadingMessage) {
+function Header(searchData, searchPage, setSearchPage, setLoading, setLoadingMessage) {
   console.log(searchData);
   return (
     <div className="App">
@@ -48,6 +48,7 @@ function Header(searchData, setSearchPage, setLoading, setLoadingMessage) {
             <Menu />
             <Search
               searchData={searchData}
+              searchPage={searchPage}
               setSearchPage={setSearchPage}
               setLoading={setLoading}
               setLoadingMessage={setLoadingMessage}

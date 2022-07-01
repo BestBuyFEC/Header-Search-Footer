@@ -1,34 +1,31 @@
 import React, { useState } from "react";
 import List from "./List";
 
+
 function Search(
-  searchData,
-  searchPage,
-  setSearchPage,
-  setLoading,
-  setLoadingMessage
+  searchData
+ 
 ) {
-  console.log(searchData, searchPage);
+
+
+  console.log(searchData);
   const [searchString, setSearchString] = useState("");
   const handleGetSearch = (e) => {
     let lowerCase = e.target.value.toLowerCase();
     setSearchString(lowerCase);
-    setSearchPage(true);
-    // console.log()
-    setLoading(true);
-    setLoadingMessage("App is Loading");
-    fetch("http://localhost:3012/api/products/")
-      .then((response) => response.json())
-      .then((data) => console.log(data));
-
-    // .then((data) => console.log(data))
-    setLoading(false);
+    handleGetSearch()
+  
   };
+
+  // const setPage = (setSearchPage, searchPage) => {
+  //   setSearchPage(true)
+  //   console.log(searchPage)
+  // }
 
   return (
     <div className="search-bar">
       <div className="appContainer">
-        <form className="sb-input-field">
+        <form className="sb-input-field" onSubmit={handleGetSearch}>
           <input
             type="text"
             id="gh-search-input"
@@ -38,12 +35,12 @@ function Search(
             placeholder="What can we help you find today?"
             autoComplete="off"
             aria-label="Type to search. Navigate forward to hear suggestions"
-            value={searchString}
+            // value={searchString}
             autoCorrect="off"
             autocapitolize="off"
             spellCheck="false"
             aria-controls="suggestViewClientComponent"
-            onChange={handleGetSearch}
+            // onChange={handleGetSearch}
           />
 
           <button
@@ -71,7 +68,7 @@ function Search(
             className="header-search-button"
             title="submit search"
             aria-label="submit search"
-            onClick={handleGetSearch}
+            // onClick={handleGetSearch}
           >
             <span class="header-search-icon" aria-hidden="true">
               <svg
