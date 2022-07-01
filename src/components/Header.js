@@ -1,14 +1,12 @@
-import React, {useState, useEffect} from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+
 import Search from "./Search";
 import Menu from "./Menu";
 import StoreLocator from "./StoreLocator";
 import Cart from "./Cart";
 import BottomNav from "./BottomNav";
-import SearchPage from "./SearchPage";
 
 function Header() {
-
   const [searchData, setSearch] = useState(null);
   const [loading, setLoading] = useState(true);
   const [loadingMessage, setLoadingMessage] = useState("");
@@ -17,8 +15,6 @@ function Header() {
   useEffect(() => {
     loadOnce();
   }, []);
-
-
 
   function loadOnce() {
     setSearchPage(true);
@@ -29,9 +25,8 @@ function Header() {
       .then((data) => setSearch(data));
     setLoading(false);
     setSearchPage(false);
- 
   }
- 
+
   return (
     <div className="Header">
       <header>
@@ -72,7 +67,9 @@ function Header() {
             </a>
             <Menu />
             <Search
-              searchData={searchData} setSearchPage={setSearchPage} searchPage={searchPage}
+              searchData={searchData}
+              setSearchPage={setSearchPage}
+              searchPage={searchPage}
             />
             <StoreLocator />
             <Cart />

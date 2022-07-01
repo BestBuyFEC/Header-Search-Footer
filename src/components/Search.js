@@ -1,21 +1,15 @@
 import React, { useState } from "react";
-import SearchPage from "./SearchPage";
-
-
 
 function Search(searchData, setSearchPage, searchPage) {
-   console.log(searchData);
+  console.log(searchData);
   const [searchString, setSearchString] = useState("");
   const handleGetSearch = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     // let lowerCase = e.target.value.toLowerCase();
     // setSearchString(lowerCase);
-  setSearchPage(true)
-  console.log(searchPage)
-  
+    setSearchPage(true);
+    console.log(searchPage);
   };
-
-
 
   return (
     <div className="search-bar">
@@ -103,7 +97,6 @@ function Search(searchData, setSearchPage, searchPage) {
           <input type="hidden" id="keys" value="keys" name="keys" />
         </form>
       </div>
-    
     </div>
   );
 }
