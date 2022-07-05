@@ -21,7 +21,7 @@ function Search(searchData, setSearchPage, searchPage) {
             className="search-input"
             name="st"
             maxLength="90"
-            placeholder="What can we help you find today?"
+            placeholder="Search Best Buy"
             autoComplete="off"
             aria-label="Type to search. Navigate forward to hear suggestions"
             // value={searchString}

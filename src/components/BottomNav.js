@@ -123,10 +123,11 @@ function BottomNav() {
                         viewBox="0 0 100 100"
                         class="leading-icon"
                         fill="white"
-                        width="20"
-                        height="20"
+                        width="35"
+                        height="35"
                       >
                         <svg
+                          className="accountSvg"
                           xmlns="http://www.w3.org/2000/svg"
                           viewBox="0 0 32 32"
                         >
